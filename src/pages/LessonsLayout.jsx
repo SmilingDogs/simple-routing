@@ -1,10 +1,10 @@
-import { Outlet, useNavigate  } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate, useNavigation  } from 'react-router-dom';
 
 
 export const LessonsLayout = () => {
-    // const [query, setQuery] = useState('');
+    const { state } = useNavigation();
     const navigate = useNavigate();
-    
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -12,20 +12,22 @@ export const LessonsLayout = () => {
         let searchQuery = form.search.value;
         console.log(searchQuery);
 
-        navigate(`/lesson/${searchQuery}`);
+        navigate(`/${searchQuery}`);
         form.search.value = '';
-        
     }
 
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <input type='text' placeholder='search a React lesson' name='search'/>
+            <nav className='nav'>
+                <NavLink to={'/'} className='nav-link'>Home</NavLink>
+            </nav>
+            <form onSubmit={handleSubmit} className='search-form'>
+                <label htmlFor='search'>Type a React search keyword</label>
+                <input type='text'  name='search'/>
                 <button type='submit'>Go!</button>
             </form>
-            {/* {responseError && <p style={{ color: 'red' }}>{responseError}</p>} */}
-            <main><Outlet /></main>
+            {state === 'loading' ? 'Loading your data' : <main><Outlet /></main>}
         </div>
     )
 }
