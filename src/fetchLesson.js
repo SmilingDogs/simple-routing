@@ -1,0 +1,1 @@
+export const fetchLesson = ({ params }) => fetch(`https://react-course-api.azurewebsites.net/lesson/${params.lessonName}`)
