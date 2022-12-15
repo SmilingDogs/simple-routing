@@ -1,10 +1,10 @@
-import { NavLink, Outlet, useNavigate, useNavigation  } from 'react-router-dom';
+import { NavLink, Outlet, useNavigation, useSearchParams  } from 'react-router-dom';
 
 
 export const LessonsLayout = () => {
     const { state } = useNavigation();
-    const navigate = useNavigate();
-
+    // const navigate = useNavigate();
+    let [searchParams, setSearchParams] = useSearchParams();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -12,7 +12,9 @@ export const LessonsLayout = () => {
         let searchQuery = form.search.value;
         console.log(searchQuery);
 
-        navigate(`/${searchQuery}`);
+        setSearchParams({ topic: searchQuery });
+        // navigate(`/${searchParams}`);
+
         form.search.value = '';
     }
 

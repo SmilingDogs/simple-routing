@@ -19,7 +19,7 @@ export const routerLessons = createBrowserRouter([
                 element: <Main />,
             },
             {
-                path: '/:keyword',
+                path: '/?topic=:searchParams',
                 element: <LessonCard />,
                 loader: fetchLesson,
                 errorElement: <Error />
