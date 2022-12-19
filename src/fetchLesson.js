@@ -10,5 +10,8 @@ export const fetchLesson = ({ request }) => {
     return null;
   }
 
+  // export const fetchLessonDetails = ({ params }) => {
 
+  //   return fetch(`https://react-course-api.azurewebsites.net/lesson/${query}`)
+  // };
 //`https://react-course-api.azurewebsites.net/lesson/${}`
