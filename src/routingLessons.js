@@ -17,17 +17,18 @@ export const routerLessons = createBrowserRouter([
             {
                 index: true,
                 element: <Main />,
+
             },
             {
-                path: '/?topic=:searchParams',
+                path: '/lessoncard',
                 element: <LessonCard />,
                 loader: fetchLesson,
-                errorElement: <Error />
+
             },
             {
                 path: '/lesson/:name',
                 element: <LessonDetails />,
-                
+
             }
         ]
     }
