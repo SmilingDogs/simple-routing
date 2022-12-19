@@ -13,7 +13,7 @@ const Details = ({ data }) => {
                             <br />
                         </>
                     ))}
-                    <a href={obj.youtube}>Watch on Youtube</a>
+                    <a href={obj.youtube}>Watch it on Youtube</a>
                     <br />
                     {obj.hometask.map((task, k) => (
                         <span key={k} className='task'>{task}</span>
@@ -24,4 +24,4 @@ const Details = ({ data }) => {
     )
 }
 
-export default Details
+export default Details;
