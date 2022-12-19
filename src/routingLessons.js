@@ -14,16 +14,18 @@ export const routerLessons = createBrowserRouter([
         element: < LessonsLayout />,
         errorElement: <Error />,
         children: [
+            
             {
                 path: '/lesson',
                 element: <LessonCard />,
                 loader: fetchLesson,
+                id: 'lesson'
 
             },
             {
                 path: '/lesson/:name',
                 element: <LessonDetails />,
-
+                
             }
         ]
     }

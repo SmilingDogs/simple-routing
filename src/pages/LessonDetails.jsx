@@ -1,8 +1,9 @@
-// import { useLoaderData } from 'react-router-dom';
-// import Card from '../components/Card';
+import { useRouteLoaderData } from 'react-router-dom';
+
 
 export const LessonDetails = () => {
-
+  const lesson = useRouteLoaderData('lesson');
+  console.log(lesson); //*currently returns undefined
   
   return (
     <p>This is specific lesson details</p>
