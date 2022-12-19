@@ -14,7 +14,7 @@ export const LessonsLayout = () => {
 
         navigate({
             pathname: '/lesson',
-            search: `?${createSearchParams(params)}`, //* passing an object to createSearchParams function, result will be navigating to url http://localhost:3000/lessoncard?q=searchQuery
+            search: `?${createSearchParams(params)}`, //* passing an object to createSearchParams function, result will be navigating to url http://localhost:3000/lesson?q=searchQuery
         });
 
         form.search.value = '';
