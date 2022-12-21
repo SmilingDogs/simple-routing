@@ -1,11 +1,12 @@
-export const fetchLesson = ({ request }) => {
-    console.log(request);
-    const url = new URL(request.url);
-    const searchQuery = url.searchParams.get('q');
+export const fetchLesson = async ({ request }) => {
+  console.log(request);
+  const url = new URL(request.url);
+  const searchQuery = url.searchParams.get('q');
 
-    if (searchQuery) {
-      return fetch(`https://react-course-api.azurewebsites.net/lesson/${searchQuery}`);
-    }
-    return null;
+  if (searchQuery) {
+    const response = await fetch(`https://react-course-api.azurewebsites.net/lesson/${searchQuery}`)
+    return await response.json();
   }
+  return null;
+}
 
