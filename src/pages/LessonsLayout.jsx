@@ -10,11 +10,11 @@ export const LessonsLayout = () => {
         const form = e.target;
         let searchQuery = form.search.value;
         console.log(searchQuery);
-        const params = { q: searchQuery };//* creating an search object with key:value format
+        const params = { q: searchQuery };//* creating an search params object with key:value format
 
         navigate({
             pathname: '/lesson',
-            search: `?${createSearchParams(params)}`, //* passing an object to createSearchParams function, result will be navigating to url http://localhost:3000/lesson?q=searchQuery
+            search: `?${createSearchParams(params)}`, //* passing params to createSearchParams function, result will be navigating to url http://localhost:3000/lesson?q=searchQuery
         });
 
         form.search.value = '';
@@ -24,7 +24,7 @@ export const LessonsLayout = () => {
     return (
         <div>
             <nav className='nav'>
-                <NavLink to={'/'} className='nav-link'>Home</NavLink>
+                <NavLink to='/' className='nav-link'>Home</NavLink>
             </nav>
             <form onSubmit={handleSubmit} className='search-form'>
                 <label htmlFor='search'>Type a React search keyword</label>

@@ -14,7 +14,7 @@ export const LessonCard = () => {
       {isSomethingWentWrong && <Error />}
       {isDataEmpty && <p>Nothing found ...try another keyword!</p>}
       {!isDataEmpty && loaderData.map((dataObj, i) => (
-        <Link key={i} to={`/lesson/${loaderData[0].name}`} className='card-link' state={loaderData}>
+        <Link key={i} to={`/lesson/${dataObj.name}`} className='card-link' state={dataObj}>
           <Card dataObj={dataObj} />
         </Link>
       ))}
