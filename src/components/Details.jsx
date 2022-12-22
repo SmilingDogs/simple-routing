@@ -1,8 +1,7 @@
 import React from "react";
 
 const Details = ({ data }) => {
-  console.log(data);
-
+  
   const { keyPoints, links, title, type, youtube } = data;
 
   return (

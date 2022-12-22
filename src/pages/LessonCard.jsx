@@ -4,7 +4,7 @@ import { Error } from './Error';
 export const LessonCard = () => {
 
   const loaderData = useLoaderData();
-  console.log(loaderData);
+  
   const isDataEmpty = Array.isArray(loaderData) && !loaderData.length;
   const isSomethingWentWrong = loaderData === 'Something went wrong';
 

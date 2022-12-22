@@ -1,5 +1,5 @@
 export const fetchLesson = async ({ request }) => {
-  console.log(request);
+  
   const url = new URL(request.url);
   const searchQuery = url.searchParams.get('q');
 

@@ -9,7 +9,7 @@ export const LessonsLayout = () => {
         e.preventDefault();
         const form = e.target;
         let searchQuery = form.search.value;
-        console.log(searchQuery);
+        
         const params = { q: searchQuery };//* creating an search params object with key:value format
 
         navigate({
