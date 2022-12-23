@@ -20,7 +20,7 @@ const Details = ({ data }) => {
         </>
       ))}
       {youtube && (
-        <a href={youtube} className="youtube"> Watch on Youtube!</a>
+        <a href={youtube} target='_blank' rel="noreferrer" className="youtube"> Watch on Youtube!</a>
       )}
     </div>
   );
