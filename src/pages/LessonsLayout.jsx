@@ -32,7 +32,7 @@ export const LessonsLayout = () => {
                 <button type='submit'>Go!</button>
             </form>
             <Main />
-            {state === 'loading' ? 'Loading your data' : <main><Outlet /></main>}
+            {state === 'loading' ? <p>Loading your data</p> : <main><Outlet /></main>}
         </div>
     )
 }

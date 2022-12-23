@@ -10,16 +10,12 @@ const Details = ({ data }) => {
       <span>type: {type}</span>
       <h3>Keyponts:</h3>
       {keyPoints?.map((task, k) => (
-        <p key={k} className="task">
-          {task}
-        </p>
+        <p key={k} className="task">{task}</p>
       ))}
       <h3>Links:</h3>
       {links?.map((link, h) => (
         <>
-          <a href={link[1]} key={h}>
-            {link[0]}
-          </a>
+          <a href={link[1]} key={h}>{link[0]}</a>
           <br />
         </>
       ))}
