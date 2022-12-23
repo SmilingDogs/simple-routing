@@ -5,7 +5,7 @@ const Details = ({ data }) => {
   const { keyPoints, links, title, type, youtube } = data;
 
   return (
-    <div className="lesson-info">
+    <div className="lesson-info" key={title}>
       <h1>Lesson: {title}</h1>
       <span>type: {type}</span>
       <h3>Keyponts:</h3>
@@ -15,7 +15,7 @@ const Details = ({ data }) => {
       <h3>Links:</h3>
       {links?.map((link, h) => (
         <>
-          <a href={link[1]} key={h}>{link[0]}</a>
+          <a href={link[1]} target='_blank' rel="noreferrer" key={h}>{link[0]}</a>
           <br />
         </>
       ))}
