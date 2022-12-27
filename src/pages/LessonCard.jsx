@@ -3,17 +3,17 @@ import Card from '../components/Card';
 import { Error } from './Error';
 export const LessonCard = () => {
 
-  const loaderData = useLoaderData();
+  const {data, error} = useLoaderData();
   
-  const isDataEmpty = Array.isArray(loaderData) && !loaderData.length;
-  const isSomethingWentWrong = loaderData === 'Something went wrong';
+  const isDataEmpty = Array.isArray(data) && !data.length;
+  const isSomethingWentWrong = error !== null;
 
 
   return (
     <div>
       {isSomethingWentWrong && <Error />}
       {isDataEmpty && <p>Nothing found ...try another keyword!</p>}
-      {!isDataEmpty && loaderData.map((dataObj, i) => (
+      {!isDataEmpty && data.map((dataObj, i) => (
         <Link key={i} to={`/lesson/${dataObj.name}`} className='card-link' state={dataObj}>
           <Card dataObj={dataObj} />
         </Link>

@@ -1,8 +1,10 @@
+import {useState } from 'react'
 import { NavLink, Outlet, useNavigation, useNavigate, createSearchParams } from 'react-router-dom';
 import { Main } from './Main';
 
 export const LessonsLayout = () => {
     const { state } = useNavigation();
+    const [clicked, setClicked] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -19,7 +21,13 @@ export const LessonsLayout = () => {
 
         form.search.value = '';
     }
+    const handleClick = () => {
+        setClicked(true);
 
+        setTimeout(() => {
+            setClicked(false);
+        }, 2000)
+    }
 
     return (
         <div>
@@ -29,7 +37,7 @@ export const LessonsLayout = () => {
             <form onSubmit={handleSubmit} className='search-form'>
                 <label htmlFor='search'>Type a React search keyword</label>
                 <input type='text' name='search' />
-                <button type='submit'>Go!</button>
+                <button type='submit' onClick={handleClick}>{clicked ? 'Started Search' : 'Go!'}</button>
             </form>
             <Main />
             {state === 'loading' ? <p>Loading your data</p> : <main><Outlet /></main>}
